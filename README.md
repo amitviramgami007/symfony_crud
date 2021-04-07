@@ -1,2 +1,2 @@
-# symfony_crud
-Basic Symfony CRUD Application
+# symfony_practice
+Learn Basic Symfony Framework 
