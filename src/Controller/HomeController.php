@@ -29,6 +29,18 @@ class HomeController extends AbstractController
     {
         // request
         // $name = $request->get('name');
-        return $this->render('home/greet.html.twig', compact('name'));
+
+        $form = $this->createFormBuilder()
+            ->add('fullname')
+            ->getForm()
+            ->createView();
+
+        $person = [
+            'name' => 'Amit',
+            'lastname' => 'V',
+            'age' => '24'
+        ];
+
+        return $this->render('home/greet.html.twig', compact('person', 'form'));
     }
 }
