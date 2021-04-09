@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Symfony Task CRUD {% endblock %}
+
+{% block body %}
+    <h1>{{task.name}}</h1>
+    <p>{{task.description}}</p>
+    <hr>
+    <a href="/">Go Back</a>
+{% endblock %}
