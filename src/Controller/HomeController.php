@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Website;
+use App\Repository\WebsiteRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/home", name="home")
@@ -42,5 +44,20 @@ class HomeController extends AbstractController
         ];
 
         return $this->render('home/greet.html.twig', compact('person', 'form'));
+    }
+
+    /**
+     * @Route("/website", name="website")
+     */
+    public function getWebsiteData(WebsiteRepository $websiteRepository)
+    {
+        // $results = $this->getDoctrine()
+        //     ->getRepository(Website::class)
+        //     ->findConfiguration();
+        $results = $websiteRepository->findConfiguration();
+
+        // dd($results);
+
+        return $this->render('home/index.html.twig', compact('results'));
     }
 }
