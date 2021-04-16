@@ -19,7 +19,9 @@
 </div> #}
 
     <pre>
+    {% if results %}
         {{ dump(results) }}
+    {% endif %}
         {# {% for result in results %}
             {{ result.domainName }}
             {{ result.language }}

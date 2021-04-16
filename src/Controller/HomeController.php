@@ -54,6 +54,7 @@ class HomeController extends AbstractController
         // $results = $this->getDoctrine()
         //     ->getRepository(Website::class)
         //     ->findConfiguration();
+        
         $results = $websiteRepository->findConfiguration();
 
         // dd($results);
